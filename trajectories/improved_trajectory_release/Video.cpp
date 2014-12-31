@@ -40,10 +40,13 @@ int main( int argc, char** argv )
 
 		// get a new frame
 		frame = cvQueryFrame( capture );
-		if( !frame )
+		if( !frame ) {
+			printf("debug 0");
 			break;
+		}
 
 		if( !image ) {
+			printf("debug 1");
 			image =  cvCreateImage( cvSize(frame->width,frame->height), 8, 3 );
 			image->origin = frame->origin;
 		}
@@ -51,6 +54,7 @@ int main( int argc, char** argv )
 		cvCopy( frame, image, 0 );
 
 		if( show == 1 ) {
+			printf("debug 2");
 			cvShowImage( "Video", image);
 			c = cvWaitKey(3);
 			if((char)c == 27) break;
