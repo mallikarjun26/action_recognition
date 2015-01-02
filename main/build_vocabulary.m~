@@ -51,7 +51,6 @@ function build_vocabulary(conf)
     % Trajectory shape vocab
     traj_features   = features(11:40, :);
     traj_vocab      = vl_kmeans(traj_features, conf.numberOfWords, 'verbose', 'algorithm', 'elkan', 'MaxNumIterations', 50) ;
-    clear traj_features;
         
     % HoG vocab
     hog_features    = features(41:136, :);
@@ -66,12 +65,11 @@ function build_vocabulary(conf)
     % MBHx vocab
     mbhx_features   = features(245:340, :);
     mbhx_vocab      = vl_kmeans(mbhx_features, conf.numberOfWords, 'verbose', 'algorithm', 'elkan', 'MaxNumIterations', 50) ;
-    clear mbhx_features;
     
     % MBHy vocab
     mbhy_features   = features(341:436, :);
     mbhy_vocab      = vl_kmeans(mbhy_features, conf.numberOfWords, 'verbose', 'algorithm', 'elkan', 'MaxNumIterations', 50) ;
-    clear mbhy_features;
+    
     
     %% Save the vocabulary
     save(conf.vocabPath, 'traj_vocab', 'hog_vocab', 'hof_vocab', 'mbhx_vocab', 'mbhy_vocab');

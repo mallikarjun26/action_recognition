@@ -23,7 +23,9 @@ int main( int argc, char** argv )
 {
 	int frameNum = 0;
 
+    printf("Debug 00\n");
 	char* video = argv[1];
+    printf("Debug 11 %s \n",argv[1]);
 	capture = cvCreateFileCapture(video);
 
 	if( !capture ) { 

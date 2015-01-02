@@ -5,7 +5,7 @@ path=$1;
 currentPath=$(pwd);
 dataset="hmdb51";
 datasetPath="$path/datasets/$dataset";
-featuresPath="$path/results/features"; 
+featuresPath="$path/results/$dataset/features"; 
 execPath="$currentPath/../rest/trajectories/improved_trajectory_release/release/DenseTrackStab";
 
 # Check if features are already generated
@@ -27,12 +27,18 @@ for d in */ ; do
   mkdir -p "$resultClassPath";
 
   cd $classPath
+  i=0
   for f in *.avi; do
+    i=`expr $i + 1`
+    echo i is $i
     echo f is $f
     samplePath="$classPath/$f";
     featurePath="$resultClassPath/$f.txt";
     $execPath $samplePath > $featurePath;
-    echo Nice
+    if [ $i -eq 2 ] 
+    then
+      break  
+    fi
   done
   cd $datasetPath
 done

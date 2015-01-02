@@ -1,0 +1,1 @@
+/home/altereye/projects/action_recognition/rest/trajectories/improved_trajectory_release/release/Video /home/altereye/Documents/CV/action_recognition/datasets/hmdb51/brush_hair/Silky_Straight_Hair_Original_brush_hair_u_nm_np1_ba_goo_2.avi

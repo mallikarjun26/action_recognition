@@ -3,7 +3,7 @@ function getImDenseFeatures(path)
   %% Initialization
   dataset = 'hmdb51';
   datasetPath = [path '/datasets' dataset];
-  featuresPath = [path '/results/features']; 
+  featuresPath = [path '/results/' dataset '/features']; 
 
   %% Check if features are already generated
   if(exist(featuresPath, 'dir') == 7)

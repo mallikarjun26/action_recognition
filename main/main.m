@@ -1,15 +1,12 @@
 
 
 %% Initialization
-conf.rootDir         = '/Users/mallikarjun/Documents/action_recognition';
-conf.dataSet         = 'UCF50';
-conf.trainPer        = 0.7;
-conf.testPer         = 0.3;
-conf.words           = 4000;
+conf.rootDir         = '/home/altereye/Documents/CV/action_recognition';
+conf.dataSet         = 'hmdb51';
+conf.numberOfWords   = 4000;
 
+conf.featuresPath    = [conf.rootDir '/results/' conf.dataSet '/features'];
 conf.vocabPath       = [conf.rootDir '/results/' conf.dataSet '/vocab/vocab.mat'];
-
-
 
 %% Build vocabulary
 build_vocabulary(conf);
